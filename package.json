@@ -1,0 +1,34 @@
+{
+  "name": "infinite-scroll-image",
+  "version": "1.1.0",
+  "description": "",
+  "main": "index.js",
+  "homepage": "https://nickdurnev.github.io/infinite-scroll-image",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html --public-url /infinite-scroll-image/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickdurnev/goit-js-hw-10.git"
+  },
+  "keywords": [],
+  "author": "Durnev Nikita",
+  "bugs": {
+    "url": "https://github.com/nickdurnev/infinite-scroll-image/issues"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-handlebars-precompile": "^1.0.2",
+    "parcel-plugin-nuke-dist": "^1.0.1",
+    "posthtml-include": "^1.6.2",
+    "sass": "^1.32.8"
+  },
+  "dependencies": {
+    "imagesloaded": "^5.0.0",
+    "infinite-scroll": "^4.0.1",
+    "masonry-layout": "^4.2.2",
+    "notiflix": "^3.2.5",
+    "throttle-debounce": "^4.0.1"
+  }
+}
