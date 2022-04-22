@@ -21,10 +21,13 @@ export const newImagesService = new imageServiceAPI();
 
 export function fetchImages() {
     newImagesService.fetchImage().then((images) => {
+        if (images.length === 0) {
+        Notify.info('Таких картинок нет. Введите что-то поинтереснее')
+    }
         newImagesService.incrementPage();
         renderImagesContainer(images);
     })
-    .catch(error => Notify.failure('Картинки кончились'))
+        .catch(error => Notify.failure('Картинки кончились'));
 }
 
 function onSearch(e) {
