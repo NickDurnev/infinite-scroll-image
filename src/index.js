@@ -1,9 +1,8 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import imagesloaded from "imagesloaded";
-import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import { throttle } from 'throttle-debounce';
 import renderImagesContainer from "./js/renderImages";
 import imageServiceAPI from "./js/imageServiceAPI";
+import scrollPageDownRegister from './js/infiniteScroll';
 
 const refs = getRefs();
 
@@ -20,7 +19,7 @@ window.addEventListener("scroll", throttle(300,scrollPageDownRegister));
 
 export const newImagesService = new imageServiceAPI();
 
-function fetchImages() {
+export function fetchImages() {
     newImagesService.fetchImage().then((images) => {
         newImagesService.incrementPage();
         renderImagesContainer(images);
@@ -50,18 +49,7 @@ function resetSearch(e) {
     }
 }
 
-function scrollPageDownRegister() {
-    let maxYOffset = document.documentElement.offsetHeight - document.documentElement.clientHeight;
-    console.log(maxYOffset);
-    
-    if (Math.ceil(this.pageYOffset) == maxYOffset) {
-        Loading.circle();
-        fetchImages();
-        imagesloaded(refs.imageContainer, () => {
-            Loading.remove();
-        })
-    }
-}
+
 
 
 
