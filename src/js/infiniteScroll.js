@@ -8,7 +8,7 @@ export default function scrollPageDownRegister() {
     let maxYOffset = document.documentElement.offsetHeight - document.documentElement.clientHeight;
     console.log(maxYOffset);
     console.log(this.pageYOffset);
-    if (Math.ceil(this.pageYOffset) == maxYOffset) {
+    if (Math.ceil(this.pageYOffset) >= (maxYOffset - 100)) {
         Loading.circle();
         fetchImages();
         imagesloaded(refs.imageContainer, () => {
